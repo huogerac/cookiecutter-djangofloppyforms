@@ -46,4 +46,15 @@
 </section>
 
 {% endblock %}
+
+{% block extrajs %}
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('.datepicker').datepicker({
+      'format': 'dd/mm/yy'
+    });
+  });
+</script>
+{% endblock extrajs %}
+
 {% endraw %}

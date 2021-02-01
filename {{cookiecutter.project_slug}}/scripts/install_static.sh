@@ -9,3 +9,4 @@ cp -r node_modules/swiper/ themes/static/vendor/
 cp -r node_modules/glightbox/ themes/static/vendor/
 cp -r node_modules/@srexi/purecounterjs/ themes/static/vendor/
 cp -r node_modules/isotope-layout/ themes/static/vendor/
+cp -r node_modules/bootstrap-datepicker/ themes/static/vendor/

@@ -27,6 +27,7 @@
     <link href="{% static 'vendor/remixicon/fonts/remixicon.css' %}" rel="stylesheet">
     <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
     <link href="{% static 'vendor/glightbox/dist/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css' %}" rel="stylesheet">
   
     <!-- Template Main CSS File -->
     <link href="{% static 'themes/bootstrap-fs/css/style.css' %}" rel="stylesheet">
@@ -67,18 +68,18 @@
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="/" class="logo d-flex align-items-center">
         <img src="{% static 'themes/bootstrap-fs/img/logo.png' %}" alt="">
-        <span>FlexStart</span>
+        <span>{% endraw %}{{ cookiecutter.project_name }}{% raw %}</span>
       </a>
 
       {% block navbar_area %}
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link active " href="#">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link active " href="/">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">Sobre</a></li>
+          <li><a class="nav-link scrollto" href="#portfolio">Galeria</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contato</a></li>
           <li><a class="getstarted scrollto" href="{% url {% endraw %}'{{ cookiecutter.main_app }}{% raw %}.getstarted' %}">Get Started</a></li>
       
           {% if request.user.is_authenticated %}
@@ -116,7 +117,7 @@
           <h2 data-aos="fade-up" data-aos-delay="400">Iniciar um produto com um template bonitão ao invés de um bootstrap padrão faz toda diferença na venda da sua ideia.</h2>
           <div data-aos="fade-up" data-aos-delay="600">
             <div class="text-center text-lg-start">
-              <a href="{% url {% endraw %}'{{ cookiecutter.main_app }}{% raw %}.getstarted' %}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+              <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                 <span>Ver mais...</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -161,9 +162,10 @@
           <div class="col-lg-5 col-md-12 footer-info">
             <a href="index.html" class="logo d-flex align-items-center">
               <img src="{% static 'themes/bootstrap-fs/img/logo.png' %}" alt="">
-              <span>FlexStart</span>
+              <span>{% endraw %}{{ cookiecutter.project_name }}</span>
             </a>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <p>{{ cookiecutter.description }}.</p>
+            {% raw %}
             <div class="social-links mt-3">
               <a href="https://twitter.com/huogerac" class="twitter"><i class="bi bi-twitter"></i></a>
               <a href="https://speakerdeck.com/huogerac" class="facebook"><i class="bi bi-app-indicator"></i></a>
@@ -174,16 +176,16 @@
           </div>
 
           <div class="col-lg-2 col-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>Links Úteis</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="https://github.com/jazzband/django-floppyforms">Django Floppyforms</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="https://github.com/huogerac/cookiecutter-djangofloppyforms">Github</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="http://blog.billcode.com.br/">Blog Billcode</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="https://bootstrapmade.com/license/">Licença de uso</a></li>
             </ul>
           </div>
 
+          <!--
           <div class="col-lg-2 col-6 footer-links">
             <h4>Our Services</h4>
             <ul>
@@ -193,16 +195,15 @@
               <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
             </ul>
-          </div>
+          </div>-->
 
           <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-            <h4>Contact Us</h4>
+            <h4>Contato</h4>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              São José dos Campos<br>
+              🇧🇷Brasil<br><br>
+              <strong>Fone:</strong> +55 12 991 088 998<br>
+              <strong>Email:</strong> huogerac@gmail.com<br>
             </p>
 
           </div>
@@ -243,12 +244,14 @@
   <!-- Basic JS for this template::: bootstrap-fs -->
   {% block js %}
   <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
   <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.js' %}"></script>
   <script src="{% static 'vendor/aos/dist/aos.js' %}"></script>
   <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
   <script src="{% static 'vendor/purecounterjs/dist/purecounter.js' %}"></script>
   <script src="{% static 'vendor/isotope-layout/dist/isotope.pkgd.min.js' %}"></script>
   <script src="{% static 'vendor/glightbox/dist/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
 
   <!-- Template Main JS File -->
   <script src="{% static 'themes/bootstrap-fs/js/main.js' %}"></script>

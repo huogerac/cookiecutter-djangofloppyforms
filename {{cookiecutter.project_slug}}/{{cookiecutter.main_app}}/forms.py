@@ -18,6 +18,10 @@ class {{ cookiecutter.main_model }}ModelForm(forms.ModelForm):
     class Meta:
         model = {{ cookiecutter.main_model }}
         fields = ('description', 'due_to',)
+        widgets = {
+            'description': widgets.TextInput(),
+            'due_to': widgets.DateTimeInput(),
+        }
 
 
 class BasicForm(forms.Form):

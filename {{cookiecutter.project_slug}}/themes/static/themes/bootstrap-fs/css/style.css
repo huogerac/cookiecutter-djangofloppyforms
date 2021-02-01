@@ -1665,6 +1665,15 @@ section {
   background: #5969f3;
 }
 
+form .btn.btn-primary {
+  background: #4154f1;
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
 @-webkit-keyframes animate-loading {
   0% {
     transform: rotate(0deg);

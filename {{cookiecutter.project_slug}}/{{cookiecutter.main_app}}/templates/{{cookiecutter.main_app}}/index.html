@@ -40,33 +40,50 @@
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h2>Our Values</h2>
-          <p>Odit est perspiciatis laborum et dicta</p>
+          <h2>Por que?</h2>
+          <p>Por qual razão este template foi desenvolvido?</p>
         </header>
 
         <div class="row">
 
-          <div class="col-lg-4">
-            <div class="box" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-3">
+            <div class="box" data-aos="fade-up" data-aos-delay="100">
               <img src="{% static 'themes/bootstrap-fs/img/values-1.png' %}" class="img-fluid" alt="">
-              <h3>Ad cupiditate sed est odio</h3>
-              <p>Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit. Et veritatis id.</p>
+              <h3>Separar Frontend & Backend</h3>
+              <p>Promover que tarefas do frontend possam ser feitas por times que não precisam saber Python ou detalhes do backend.</p>
             </div>
           </div>
 
-          <div class="col-lg-4 mt-4 mt-lg-0">
+          <div class="col-lg-3 mt-3 mt-lg-0">
+            <div class="box" data-aos="fade-up" data-aos-delay="200">
+              <img src="{% static 'themes/bootstrap-fs/img/values-5.svg' %}" class="img-fluid" style="max-height: 180px;" alt="">
+              <h3>Uso de CSS, JS e templates modernos</h3>
+              <p>Para uma melhor usabilidade da aplicação, precisamos fazer uso de ferramentas modernas</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 mt-3 mt-lg-0">
+            <div class="box" data-aos="fade-up" data-aos-delay="300">
+              <img src="{% static 'themes/bootstrap-fs/img/values-4.svg' %}" class="img-fluid" alt="">
+              <h3>Validação rápida do fluxo entre páginas</h3>
+              <p>Promover a criação rápida de páginas para validar o fluxo entre páginas para fechar o produto</p>
+            </div>
+          </div>
+
+          <!--
+          <div class="col-lg-3 mt-3 mt-lg-0">
             <div class="box" data-aos="fade-up" data-aos-delay="400">
-              <img src="{% static 'themes/bootstrap-fs/img/values-2.png' %}" class="img-fluid" alt="">
+              <img src="{% static 'themes/bootstrap-fs/img/values-3.png' %}" class="img-fluid" alt="">
               <h3>Voluptatem voluptatum alias</h3>
               <p>Repudiandae amet nihil natus in distinctio suscipit id. Doloremque ducimus ea sit non.</p>
             </div>
-          </div>
+          </div> -->
 
-          <div class="col-lg-4 mt-4 mt-lg-0">
-            <div class="box" data-aos="fade-up" data-aos-delay="600">
-              <img src="{% static 'themes/bootstrap-fs/img/values-3.png' %}" class="img-fluid" alt="">
-              <h3>Fugit cupiditate alias nobis.</h3>
-              <p>Quam rem vitae est autem molestias explicabo debitis sint. Vero aliquid quidem commodi.</p>
+          <div class="col-lg-3 mt-3 mt-lg-0">
+            <div class="box" data-aos="fade-up" data-aos-delay="400">
+              <img src="{% static 'themes/bootstrap-fs/img/values-2.png' %}" class="img-fluid" alt="">
+              <h3>Camada de serviço com testes</h3>
+              <p>Separação das regras de negócios em uma camada de serviço</p>
             </div>
           </div>
 
@@ -133,8 +150,8 @@
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h2>Features</h2>
-          <p>Animações no scrool et omnis fuga quis dolor direda fara</p>
+          <h2>Ferramentas</h2>
+          <p>Bibliotecas utilizadas no projeto</p>
         </header>
 
         <!-- Feature Icons -->
@@ -273,7 +290,7 @@
                 <li>Tem package.json</li>
                 <li>Instalação via npm install</li>
               </ul>
-              <a href="#" class="btn-buy">Bora lá</a>
+              <a href="{% url {% endraw %}'{{ cookiecutter.main_app }}{% raw %}.getstarted' %}" class="btn-buy">Bora lá</a>
             </div>
           </div>
 
@@ -665,9 +682,8 @@
                   <div class="error-message"></div>
                   <div class="sent-message">Your message has been sent. Thank you!</div>
 
-                  <button type="submit" class="btn btn-primary" disabled>Enviar Mensagem</button>
-                  <a href="https://github.com/huogerac/cookiecutter-djangofloppyforms">Enviar mensagem</a>
-                  
+                  <a href="https://github.com/huogerac/cookiecutter-djangofloppyforms" class="btn btn-primary">Enviar mensagem</a>
+
                 </div>
 
               </div>
