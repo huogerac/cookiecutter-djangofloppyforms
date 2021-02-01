@@ -1,0 +1,15 @@
+{
+  "project_name": "My Awesome Project",
+  "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
+  "main_app": "todo",
+  "main_model": "Task",
+  "description": "Behold My Awesome Project!",
+  "author_name": "Roger Camargo",
+  "domain_name": "example.com",
+  "email": "{{ cookiecutter.author_name.lower()|replace(' ', '-') }}@example.com",
+  "version": "0.1.0",
+  "timezone": "UTC",
+  "_copy_without_render": [
+    "**/floppyforms/*.html"
+  ]
+}

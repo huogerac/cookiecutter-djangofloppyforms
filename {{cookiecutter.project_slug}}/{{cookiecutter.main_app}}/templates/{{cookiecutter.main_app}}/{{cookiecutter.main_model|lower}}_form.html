@@ -1,0 +1,74 @@
+{% raw %}{% extends 'themes/bootstrap-fs/base.html' %}
+
+{% load static %}
+{% load floppyforms %}
+
+{% block extrajs_top %}
+    {{ block.super }}
+    {{ form.media }}
+{% endblock %}
+
+{% block content_hero %}
+{% endblock content_hero %}
+
+{% block content %}
+
+<section id="about" class="about">
+</section>
+
+<section class="dark-bg" id="signup-login">
+
+  <div class="container p-4">
+    <div class="row gx-0">
+      <div class="col-lg-12 d-flex flex-column justify-content-center" >
+        <div class="content">
+          {% block form_title %}{% endraw %}
+          <h2>Edit {{ cookiecutter.main_model }} {% raw %}#{{ {% endraw %}{{ cookiecutter.main_model|lower }}{% raw %}.id }}</h2>
+          {% endblock form_title %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-1">
+    </div>
+
+    <div class="col-md-10">
+
+      <div class="light-box spaced-box">
+
+        <form method='post' enctype="multipart/form-data">{% csrf_token %}
+
+          {% block form_fields %}
+          <div class="row">
+            <div class="col-xs-12">
+              {% formrow form.description %}
+            </div>
+          </div>
+    
+          <div class="row">
+            <div class="col-xs-12">
+              {% formrow form.due_to %}
+            </div>
+          </div>
+          {% endblock form_fields %}
+
+          {% block form_button %}
+          <input type="submit" class="btn btn-lg btn-primary" value="Save" />
+          {% endblock form_button %}
+          <a href="{% url {% endraw %}'{{ cookiecutter.main_app }}.{{ cookiecutter.main_model|lower }}{% raw %}.list' %}" class="btn btn-lg btn-secondary" role="button" >Cancel</a>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+{% endblock content %}
+{% endraw %}

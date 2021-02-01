@@ -1,0 +1,50 @@
+{% raw %}{% extends 'themes/bootstrap-fs/base.html' %}
+
+{% load static %}
+{% load floppyforms %}
+
+{% block content_hero %}
+{% endblock content_hero %}
+
+{% block content %}
+
+  <section class="dark-bg" id="signup-login">
+
+    <div class="row">
+  
+      <div class="col-md-4">
+      </div>
+
+      <div class="col-md-4">
+
+        <div class="light-box spaced-box">
+
+          <div class="text-center">
+            <img width="220" src="{% static {% endraw %}'{{ cookiecutter.main_app }}{% raw %}/img/undraw_unlock_24mb.svg' %}">
+            <h1>Login</h1>
+          </div>
+
+          <form class="row g-3" method="post" action="{% url {% endraw %}'{{ cookiecutter.main_app }}.login'{% raw %} %}">{% csrf_token %}
+              
+              {{ form }}
+
+              <p>
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    Login  <i class="fa fa-sign-in"></i> 
+                  </button>
+              </p>
+
+              <input type="hidden" name="next" value="{{ next }}" />
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+{% endblock %}
+{% endraw %}

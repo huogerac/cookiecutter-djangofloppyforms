@@ -1,0 +1,7 @@
+Django==3.1.5
+django-debug-toolbar==3.2
+django-floppyforms==1.9.0
+
+asgiref==3.3.1
+pytz==2020.5
+sqlparse==0.4.1

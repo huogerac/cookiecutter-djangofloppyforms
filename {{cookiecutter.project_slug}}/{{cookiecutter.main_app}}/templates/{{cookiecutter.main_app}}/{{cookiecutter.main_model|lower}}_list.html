@@ -1,0 +1,73 @@
+{% raw %}{% extends 'themes/bootstrap-fs/base.html' %}
+
+{% load static %}
+{% load floppyforms %}
+
+{% block content_hero %}
+{% endblock content_hero %}
+
+{% block content %}
+
+  <section id="about" class="about">
+  </section>
+
+  <section class="dark-bg" id="signup-login">
+
+    <div class="container p-4">
+      <div class="row gx-0">
+        <div class="col-lg-12 d-flex flex-column justify-content-center" >
+          <div class="content">{% endraw %}
+            <h2>My {{ cookiecutter.main_model }}s</h2>
+            {% raw %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+  
+      <div class="col-md-1">
+      </div>
+
+      <div class="col-md-10">
+
+        <div class="light-box spaced-box">
+
+          <a 
+          class="btn btn-primary"
+          href="{% url {% endraw %}'{{ cookiecutter.main_app }}.{{ cookiecutter.main_model|lower }}{% raw %}.create' %}"><i class="ri-add-box-line"></i> Add{% endraw %} {{ cookiecutter.main_model|lower }}</a>
+          {% raw %}
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Description</th>
+                <th scope="col">Due to</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for {% endraw %}{{ cookiecutter.main_model|lower }} in {{ cookiecutter.main_model|lower }}{% raw %}_list %}
+                <tr>
+                  <th scope="row">
+                    <a href="{% url {% endraw %}'{{ cookiecutter.main_app }}.{{ cookiecutter.main_model|lower }}.update' {{ cookiecutter.main_model|lower }}.id{% raw %} %}">{{ {% endraw %}{{ cookiecutter.main_model|lower }}{% raw %}.id }}</a>
+                  </th>
+                  <td>{{ {% endraw %}{{ cookiecutter.main_model|lower }}.description{% raw %} }}</td>
+                  <td>{{ {% endraw %}{{ cookiecutter.main_model|lower }}.due_to{% raw %} }}</td>
+                  <td><a href="{% url {% endraw %}'{{ cookiecutter.main_app }}.{{ cookiecutter.main_model|lower }}.delete' {{ cookiecutter.main_model|lower }}.id{% raw %} %}"><i class="ri-delete-bin-5-line"></i></a></td>
+
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+{% endblock %}
+{% endraw %}

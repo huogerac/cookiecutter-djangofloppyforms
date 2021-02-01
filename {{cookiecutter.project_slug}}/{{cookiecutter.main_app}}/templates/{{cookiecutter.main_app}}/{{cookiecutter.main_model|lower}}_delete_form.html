@@ -1,0 +1,39 @@
+{% raw %}
+{% extends {% endraw %}'{{ cookiecutter.main_app }}/{{ cookiecutter.main_model|lower }}_form.html'{% raw %} %}
+
+{% load static %}
+{% load floppyforms %}
+
+{% block extrajs_top %}
+    {{ block.super }}
+    {{ form.media }}
+{% endblock %}
+
+{% block content_hero %}
+{% endblock content_hero %}
+
+
+{% block form_title %}
+<h2>Delete{% endraw %} {{ cookiecutter.main_model }} {% raw %}#{{ {% endraw %}{{ cookiecutter.main_model|lower }}.id {% raw %} }}</h2>
+{% endblock form_title %}
+
+
+{% block form_fields %}
+<div class="mb-3">
+  {% endraw %}
+  <label for="{{ cookiecutter.main_model|lower }}_description" class="form-label">description</label>
+  <input type="text" class="form-control" id="{{ cookiecutter.main_model|lower }}_description" value="{% raw %}{{ {% endraw %}{{ cookiecutter.main_model|lower }}.description{% raw %} }}" readonly>
+</div>
+
+<div class="mb-3">
+  {% endraw %}
+  <label for="{{ cookiecutter.main_model|lower }}_due_to" class="form-label">due_to</label>
+  <input type="text" class="form-control" id="{{ cookiecutter.main_model|lower }}_due_to"  value="{% raw %}{{ {% endraw %}{{ cookiecutter.main_model|lower }}.due_to{% raw %} }}" readonly>
+</div>
+
+{% endblock form_fields %}
+
+{% block form_button %}
+<input type="submit" class="btn btn-lg btn-danger" value="Delete" />
+{% endblock form_button %}
+{% endraw %}

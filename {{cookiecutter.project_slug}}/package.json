@@ -1,0 +1,22 @@
+{
+  "name": "{{ cookiecutter.project_slug }}",
+  "version": "0.0.1",
+  "description": "Django using floppy-forms for decouple the frontend tools",
+  "scripts": {
+    "test": "gulp"
+  },
+  "dependencies": {
+    "@srexi/purecounterjs": "^1.1.1",
+    "aos": "^2.3.4",
+    "bootstrap": "^5.0.0-beta1",
+    "bootstrap-icons": "^1.3.0",
+    "glightbox": "^3.0.7",
+    "isotope-layout": "^3.0.6",
+    "jquery": "^3.5.1",
+    "remixicon": "^2.5.0",
+    "swiper": "^6.4.8"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.3"
+  }
+}
