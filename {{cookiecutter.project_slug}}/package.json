@@ -1,7 +1,7 @@
 {
   "name": "{{ cookiecutter.project_slug }}",
   "version": "0.0.1",
-  "description": "Django using floppy-forms for decouple the frontend tools",
+  "description": "Django using floppyforms for decouple the frontend tools",
   "scripts": {
     "test": "gulp"
   },

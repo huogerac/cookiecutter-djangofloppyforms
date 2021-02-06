@@ -48,14 +48,20 @@
             </thead>
             <tbody>
               {% for {% endraw %}{{ cookiecutter.main_model|lower }} in {{ cookiecutter.main_model|lower }}{% raw %}_list %}
-                <tr>
+                <tr {% if {% endraw %}{{ cookiecutter.main_model|lower }}.done {% raw %}%}class="table-secondary"{% endif%}>
                   <th scope="row">
                     <a href="{% url {% endraw %}'{{ cookiecutter.main_app }}.{{ cookiecutter.main_model|lower }}.update' {{ cookiecutter.main_model|lower }}.id{% raw %} %}">{{ {% endraw %}{{ cookiecutter.main_model|lower }}{% raw %}.id }}</a>
                   </th>
-                  <td>{{ {% endraw %}{{ cookiecutter.main_model|lower }}.description{% raw %} }}</td>
+                  {% if {% endraw %}{{ cookiecutter.main_model|lower }}.done {% raw %}%}
+                  <td><s>{{ {% endraw %}{{ cookiecutter.main_model|lower }}.description {% raw %}}}</s></td>
+                  {% else %}
+                  <td>{{{% endraw %} {{ cookiecutter.main_model|lower }}.description{% raw %} }}</td>
+                  {% endif %}
                   <td>{{ {% endraw %}{{ cookiecutter.main_model|lower }}.due_to{% raw %} }}</td>
-                  <td><a href="{% url {% endraw %}'{{ cookiecutter.main_app }}.{{ cookiecutter.main_model|lower }}.delete' {{ cookiecutter.main_model|lower }}.id{% raw %} %}"><i class="ri-delete-bin-5-line"></i></a></td>
-
+                  <td>
+                    <a href="{% url {% endraw %}'{{ cookiecutter.main_app }}.{{ cookiecutter.main_model|lower }}.done' {{ cookiecutter.main_model|lower }}.id{% raw %} %}"><i class="ri-check-double-line"></i></a>
+                    <a href="{% url {% endraw %}'{{ cookiecutter.main_app }}.{{ cookiecutter.main_model|lower }}.delete' {{ cookiecutter.main_model|lower }}.id{% raw %} %}"><i class="ri-delete-bin-5-line"></i></a>
+                  </td>
                 </tr>
               {% endfor %}
             </tbody>

@@ -30,6 +30,7 @@ urlpatterns = [
     path('{{ cookiecutter.main_model|lower }}/update/<pk>', views.{{ cookiecutter.main_model }}UpdateView.as_view(), name='{{ cookiecutter.main_app }}.{{ cookiecutter.main_model|lower }}.update'),
     path('{{ cookiecutter.main_model|lower }}/delete/<pk>', views.{{ cookiecutter.main_model }}DeleteView.as_view(), name='{{ cookiecutter.main_app }}.{{ cookiecutter.main_model|lower }}.delete'),
 
-    path('new/', views.New{{ cookiecutter.main_app|capitalize }}.as_view(), name='{{ cookiecutter.main_app }}.new'),
-    path('update/<pk>', views.New{{ cookiecutter.main_app|capitalize }}Model.as_view(), name='{{ cookiecutter.main_app }}.update'),
+    # SERVICE
+    path('{{ cookiecutter.main_model|lower }}/done/<pk>', views.{{ cookiecutter.main_model }}DoneView.as_view(), name='{{ cookiecutter.main_app }}.{{ cookiecutter.main_model|lower }}.done'),
+
 ]

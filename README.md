@@ -12,6 +12,11 @@ Tenha o NPM instalado
     npm -v
 
 
+Crie e habilite um ambiente python
+
+    $ virtualenv ~/.ve/myapp
+    $ source ~/.ve/myapp/bin/activate
+
 
 ## Uso
 
@@ -37,9 +42,5 @@ Responda as perguntas sobre seu novo projeto:
 Entre na pasta do seu novo projeto e faça o setup inicial:
 
     cd minhas_tarefas/
+    ./scripts/bootstrap.sh
 
-    pip install -r requirements.txt
-    ./manage.py migrate
-    npm install
-    ./scripts/install_static.sh
-    ./manage.py runserver

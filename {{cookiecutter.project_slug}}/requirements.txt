@@ -5,3 +5,9 @@ django-floppyforms==1.9.0
 asgiref==3.3.1
 pytz==2020.5
 sqlparse==0.4.1
+
+# Tests
+pytest==6.2.2
+pytest-django==4.1.0
+# model-mommy==2.0.0
+model-bakery==1.2.1

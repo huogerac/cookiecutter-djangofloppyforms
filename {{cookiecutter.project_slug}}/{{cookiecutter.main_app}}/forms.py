@@ -10,10 +10,6 @@ from floppyforms import widgets
 from .models import {{ cookiecutter.main_model }}
 
 
-class {{ cookiecutter.main_app|capitalize }}Form(forms.Form):
-    description = forms.CharField()
-
-
 class {{ cookiecutter.main_model }}ModelForm(forms.ModelForm):
     class Meta:
         model = {{ cookiecutter.main_model }}

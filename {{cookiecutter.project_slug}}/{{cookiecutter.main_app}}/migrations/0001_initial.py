@@ -16,6 +16,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('description', models.CharField(max_length=264)),
+                ('done', models.BooleanField(default=False)),
                 ('due_to', models.DateTimeField()),
             ],
         ),
