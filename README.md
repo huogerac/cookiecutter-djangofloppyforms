@@ -44,3 +44,17 @@ Entre na pasta do seu novo projeto e faça o setup inicial:
     cd minhas_tarefas/
     ./scripts/bootstrap.sh
 
+Rode a aplicação Django
+
+    ./manage.py runserver
+
+
+Para criar um usuário
+
+    ./manage.py createsuperuser
+
+
+Para rodar os testes
+
+    pytest
+
