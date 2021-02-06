@@ -1,0 +1,6 @@
+<div class="input-group date">
+  <input type="text" name="{{ name }}" id="id_{{ name }}" class="form-control input-group-lg datepicker" {% if value %} value="{{ value }}"{% endif %} {% if required %} required{% endif %} {% include "floppyforms/attrs.html" %}>
+  <div class="input-group-addon">
+    <span class="glyphicon glyphicon-th"></span>
+  </div>
+</div>

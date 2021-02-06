@@ -71,4 +71,14 @@
 </section>
 
 {% endblock content %}
+
+{% block extrajs %}
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('.datepicker').datepicker({
+      'format': 'yyyy-mm-dd'
+    });
+  });
+</script>
+{% endblock extrajs %}
 {% endraw %}
