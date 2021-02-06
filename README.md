@@ -58,3 +58,5 @@ Para rodar os testes
 
     pytest
 
+
+[![asciicast](https://asciinema.org/a/O33SwNhgsEelOom6pQ1xBRTz7.svg)](https://asciinema.org/a/O33SwNhgsEelOom6pQ1xBRTz7)
