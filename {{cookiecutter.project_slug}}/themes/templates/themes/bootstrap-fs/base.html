@@ -3,34 +3,66 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  
-    <title>{% block title %}Django using FlexStart Bootstrap Template{% endblock %}</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>
+      {% block title %}Django using FlexStart Bootstrap Template{% endblock %}
+    </title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
 
     <!-- Basic styles for this template::: bootstrap-fs -->
     {% block css %}
 
     <!-- Favicons -->
-    <link href="{% static 'themes/bootstrap-fs/img/favicon.png' %}" rel="icon">
-    <link href="{% static 'themes/bootstrap-fs/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
-  
+    <link
+      href="{% static 'themes/bootstrap-fs/img/favicon.png' %}"
+      rel="icon"
+    />
+    <link
+      href="{% static 'themes/bootstrap-fs/img/apple-touch-icon.png' %}"
+      rel="apple-touch-icon"
+    />
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-  
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
     <!-- Vendor CSS Files -->
-    <link href="{% static 'vendor/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'vendor/bootstrap-icons/font/bootstrap-icons.css' %}" rel="stylesheet">
-    <link href="{% static 'vendor/aos/dist/aos.css' %}" rel="stylesheet">
-    <link href="{% static 'vendor/remixicon/fonts/remixicon.css' %}" rel="stylesheet">
-    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-    <link href="{% static 'vendor/glightbox/dist/css/glightbox.min.css' %}" rel="stylesheet">
-    <link href="{% static 'vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css' %}" rel="stylesheet">
-  
+    <link
+      href="{% static 'vendor/bootstrap/dist/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/bootstrap-icons/font/bootstrap-icons.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'vendor/aos/dist/aos.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'vendor/remixicon/fonts/remixicon.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/swiper/swiper-bundle.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/glightbox/dist/css/glightbox.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css' %}"
+      rel="stylesheet"
+    />
+
     <!-- Template Main CSS File -->
-    <link href="{% static 'themes/bootstrap-fs/css/style.css' %}" rel="stylesheet">
+    <link
+      href="{% static 'themes/bootstrap-fs/css/style.css' %}"
+      rel="stylesheet"
+    />
 
     <!-- =======================================================
     * Template Name: FlexStart - v1.0.0
@@ -39,154 +71,214 @@
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
 
-		{% endblock css %}
+    {% endblock css %}
 
     <!--  USE THE extracss BLOCK to add CSS here -->
-    {% block extracss %}
-    {% endblock extracss %}
-        
+    {% block extracss %} {% endblock extracss %}
+
     <!--  USE THE extrajs_top BLOCK to add javascripts here -->
-    {% block extrajs_top %}
-    {% endblock %}        
+    {% block extrajs_top %} {% endblock %}
   </head>
 
-{% block body %}
-<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
+  {% block body %}
+  <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
+    <!--  USE THE extrabody_top BLOCK to add content here -->
+    {% block extrabody_top %} {% endblock extrabody_top %}
 
-  <!--  USE THE extrabody_top BLOCK to add content here -->
-  {% block extrabody_top %}
-  {% endblock extrabody_top %}
+    <!--  USE THE header_area BLOCK to add content here -->
+    {% block header_area %}
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+      <!--  USE THE topheader_area BLOCK to add content here -->
+      {% block topheader_area %} {% endblock topheader_area %}
 
-  <!--  USE THE header_area BLOCK to add content here -->
-  {% block header_area %}
-  <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top">
+      <div
+        class="container-fluid container-xl d-flex align-items-center justify-content-between"
+      >
+        <a href="/" class="logo d-flex align-items-center">
+          <img src="{% static 'themes/bootstrap-fs/img/logo.png' %}" alt="" />
+          <span>{% endraw %}{{ cookiecutter.project_name }}{% raw %}</span>
+        </a>
 
-    <!--  USE THE topheader_area BLOCK to add content here -->
-    {% block topheader_area %}
-    {% endblock topheader_area %}
+        {% block navbar_area %}
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link active" href="/">Home</a></li>
+            <li><a class="nav-link scrollto" href="#about">About</a></li>
+            <li><a class="nav-link scrollto" href="#portfolio">Gallery</a></li>
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            <li>
+              <a
+                class="getstarted scrollto"
+                href="{% url {% endraw %}'{{ cookiecutter.main_app }}{% raw %}.getstarted' %}"
+                >Get Started</a
+              >
+            </li>
 
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            {% if request.user.is_authenticated %}
+            <li class="dropdown">
+              <a href="#"
+                ><span
+                  ><i class="ri-user-line"></i> {{ request.user | title }}</span
+                >
+                <i class="bi bi-chevron-down"></i
+              ></a>
+              <ul>
+                {% if request.user.is_superuser %}
+                <li><a href="/admin">Painel Admin</a></li>
+                {% endif %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+              </ul>
+            </li>
+            {% else %}
+            <li>
+              <a
+                class="nav-link scrollto"
+                href="{% url {% endraw %}'{{ cookiecutter.main_app }}{% raw %}.login' %}"
+                >Login</a
+              >
+            </li>
+            {% endif %}
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+        {% endblock navbar_area %}
+      </div>
+    </header>
+    <!-- End Header -->
 
-      <a href="/" class="logo d-flex align-items-center">
-        <img src="{% static 'themes/bootstrap-fs/img/logo.png' %}" alt="">
-        <span>{% endraw %}{{ cookiecutter.project_name }}{% raw %}</span>
-      </a>
+    {% endblock header_area %}
 
-      {% block navbar_area %}
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link active " href="/">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">Sobre</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">Galeria</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contato</a></li>
-          <li><a class="getstarted scrollto" href="{% url {% endraw %}'{{ cookiecutter.main_app }}{% raw %}.getstarted' %}">Get Started</a></li>
-      
-          {% if request.user.is_authenticated %}
-          <li class="dropdown"><a href="#"><span><i class="ri-user-line"></i> {{ request.user | title }}</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              {% if request.user.is_superuser %}
-              <li><a href="/admin">Painel Admin</a></li>
-              {% endif %}
-              <li><a href="{% url 'logout' %}">Logout</a></li>
-            </ul>
-          </li>
-          {% else %}
-          <li><a class="nav-link scrollto" href="{% url {% endraw %}'{{ cookiecutter.main_app }}{% raw %}.login' %}">Login</a></li>
-          {% endif %}
-      
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-      {% endblock navbar_area %}
-
-    </div>
-  </header><!-- End Header -->
-
-  {% endblock header_area %}
-
-  <!--  USE THE content_hero BLOCK to add the HERO AREA -->
-  {% block content_hero %}
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero d-flex align-items-center">
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up">Que tal um ponta pé inicial com um visual impactante?</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400">Iniciar um produto com um template bonitão ao invés de um bootstrap padrão faz toda diferença na venda da sua ideia.</h2>
-          <div data-aos="fade-up" data-aos-delay="600">
-            <div class="text-center text-lg-start">
-              <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                <span>Ver mais...</span>
-                <i class="bi bi-arrow-right"></i>
-              </a>
+    <!--  USE THE content_hero BLOCK to add the HERO AREA -->
+    {% block content_hero %}
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 d-flex flex-column justify-content-center">
+            <h1 data-aos="fade-up">A great visual matters!</h1>
+            <h2 data-aos="fade-up" data-aos-delay="400">
+              Start a product or website using a professional design rather than
+              a standard bootstrap makes the difference to sell your idea.
+            </h2>
+            <div data-aos="fade-up" data-aos-delay="600">
+              <div class="text-center text-lg-start">
+                <a
+                  href="#about"
+                  class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"
+                >
+                  <span>See more...</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
-          <img src="{% static 'themes/bootstrap-fs/img/hero-dev-img.png' %}" class="img-fluid" alt="">
+          <div
+            class="col-lg-6 hero-img"
+            data-aos="zoom-out"
+            data-aos-delay="200"
+          >
+            <img
+              src="{% static 'themes/bootstrap-fs/img/hero-dev-img.png' %}"
+              class="img-fluid"
+              alt=""
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+    <!-- End Hero -->
+    {% endblock content_hero %}
 
-  </section><!-- End Hero -->
-  {% endblock content_hero %}
+    <!--  USE THE content_area BLOCK to add the MAIN CONTENT -->
+    {% block content_main %}
+    <main id="main">{% block content %} {% endblock content %}</main>
+    <!-- End #main -->
+    {% endblock content_main %}
 
-  <!--  USE THE content_area BLOCK to add the MAIN CONTENT -->
-  {% block content_main %}
-  <main id="main">
+    <!--  USE THE extra_content_area BLOCK to add content here -->
+    {% block extra_content_area %} {% endblock extra_content_area %}
 
-    {% block content %}
-
-    {% endblock content %}
-
-  </main><!-- End #main -->
-  {% endblock content_main %}
-
-  <!--  USE THE extra_content_area BLOCK to add content here -->
-  {% block extra_content_area %}			
-  {% endblock extra_content_area %}
-    
-
-  <!--  USE THE footer_area BLOCK to add content here -->
-  {% block footer_area %}
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-
-    <!--  USE THE footer_top BLOCK to add content here -->
-    {% block footer_top %}
-    <div class="footer-top">
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-5 col-md-12 footer-info">
-            <a href="index.html" class="logo d-flex align-items-center">
-              <img src="{% static 'themes/bootstrap-fs/img/logo.png' %}" alt="">
-              <span>{% endraw %}{{ cookiecutter.project_name }}</span>
-            </a>
-            <p>{{ cookiecutter.description }}.</p>
-            {% raw %}
-            <div class="social-links mt-3">
-              <a href="https://twitter.com/huogerac" class="twitter"><i class="bi bi-twitter"></i></a>
-              <a href="https://speakerdeck.com/huogerac" class="facebook"><i class="bi bi-app-indicator"></i></a>
-              <a href="https://www.youtube.com/channel/UCCT3NMj4ymnJ0n1UHXq2Q8g" class="instagram"><i class="bi bi-youtube"></i></a>
-              <a href="https://www.goodreads.com/user/show/12238416-roger-camargo" class="instagram"><i class="bi bi-book-half"></i></a>
-              <a href="https://www.linkedin.com/in/rogercamargo/" class="linkedin"><i class="bi bi-linkedin bx bxl-linkedin"></i></a>
-              <a href="https://github.com/huogerac/cookiecutter-djangofloppyforms" class="linkedin"><i class="bi bi-github bx"></i></a>
+    <!--  USE THE footer_area BLOCK to add content here -->
+    {% block footer_area %}
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+      <!--  USE THE footer_top BLOCK to add content here -->
+      {% block footer_top %}
+      <div class="footer-top">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-5 col-md-12 footer-info">
+              <a href="index.html" class="logo d-flex align-items-center">
+                <img
+                  src="{% static 'themes/bootstrap-fs/img/logo.png' %}"
+                  alt=""
+                />
+                <span>{% endraw %}{{ cookiecutter.project_name }}</span>
+              </a>
+              <p>{{ cookiecutter.description }}.</p>
+              {% raw %}
+              <div class="social-links mt-3">
+                <a href="https://twitter.com/huogerac" class="twitter"
+                  ><i class="bi bi-twitter"></i
+                ></a>
+                <a href="https://speakerdeck.com/huogerac" class="facebook"
+                  ><i class="bi bi-app-indicator"></i
+                ></a>
+                <a
+                  href="https://www.youtube.com/channel/UCCT3NMj4ymnJ0n1UHXq2Q8g"
+                  class="instagram"
+                  ><i class="bi bi-youtube"></i
+                ></a>
+                <a
+                  href="https://www.goodreads.com/user/show/12238416-roger-camargo"
+                  class="instagram"
+                  ><i class="bi bi-book-half"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/rogercamargo/"
+                  class="linkedin"
+                  ><i class="bi bi-linkedin bx bxl-linkedin"></i
+                ></a>
+                <a
+                  href="https://github.com/huogerac/cookiecutter-djangofloppyforms"
+                  class="linkedin"
+                  ><i class="bi bi-github bx"></i
+                ></a>
+              </div>
             </div>
-          </div>
 
-          <div class="col-lg-2 col-6 footer-links">
-            <h4>Links Úteis</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="https://github.com/jazzband/django-floppyforms">Django Floppyforms</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="https://github.com/huogerac/cookiecutter-djangofloppyforms">Github</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="http://blog.billcode.com.br/">Blog Billcode</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="https://bootstrapmade.com/license/">Licença de uso</a></li>
-            </ul>
-          </div>
+            <div class="col-lg-2 col-6 footer-links">
+              <h4>Links Úteis</h4>
+              <ul>
+                <li>
+                  <i class="bi bi-chevron-right"></i>
+                  <a href="https://github.com/jazzband/django-floppyforms"
+                    >Django Floppyforms</a
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-chevron-right"></i>
+                  <a
+                    href="https://github.com/huogerac/cookiecutter-djangofloppyforms"
+                    >Github</a
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-chevron-right"></i>
+                  <a href="http://blog.billcode.com.br/">Blog Billcode</a>
+                </li>
+                <li>
+                  <i class="bi bi-chevron-right"></i>
+                  <a href="https://bootstrapmade.com/license/"
+                    >Licença de uso</a
+                  >
+                </li>
+              </ul>
+            </div>
 
-          <!--
+            <!--
           <div class="col-lg-2 col-6 footer-links">
             <h4>Our Services</h4>
             <ul>
@@ -198,72 +290,73 @@
             </ul>
           </div>-->
 
-          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-            <h4>Contato</h4>
-            <p>
-              São José dos Campos<br>
-              🇧🇷Brasil<br><br>
-              <strong>Fone:</strong> +55 12 991 088 998<br>
-              <strong>Email:</strong> huogerac@gmail.com<br>
-            </p>
-
+            <div
+              class="col-lg-3 col-md-12 footer-contact text-center text-md-start"
+            >
+              <h4>Contact</h4>
+              <p>
+                São José dos Campos<br />
+                🇧🇷Brasil<br /><br />
+                <strong>Phone:</strong> +55 12 991 088 998<br />
+                <strong>Email:</strong> huogerac@gmail.com<br />
+              </p>
+            </div>
           </div>
-
         </div>
       </div>
-    </div>
-    {% endblock footer_top %}
+      {% endblock footer_top %}
 
-    <!--  USE THE footer BLOCK to add content here -->
-    {% block footer %}
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>FlexStart</span></strong>. All Rights Reserved
+      <!--  USE THE footer BLOCK to add content here -->
+      {% block footer %}
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>FlexStart</span></strong
+          >. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-    {% endblock footer %}
+      {% endblock footer %}
 
-    <!--  USE THE footer_bottom BLOCK to add content here -->
-    {% block footer_bottom %}
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-    {% endblock footer_bottom %}
+      <!--  USE THE footer_bottom BLOCK to add content here -->
+      {% block footer_bottom %}
+      <a
+        href="#"
+        class="back-to-top d-flex align-items-center justify-content-center"
+        ><i class="bi bi-arrow-up-short"></i
+      ></a>
+      {% endblock footer_bottom %}
+    </footer>
+    <!-- End Footer -->
+    {% endblock footer_area %}
 
-  </footer><!-- End Footer -->
-  {% endblock footer_area %}
+    <!--  USE THE extrabody_bottom BLOCK to add content here -->
+    {% block extrabody_bottom %} {% endblock extrabody_bottom %}
 
-  <!--  USE THE extrabody_bottom BLOCK to add content here -->
-  {% block extrabody_bottom %}
-  {% endblock extrabody_bottom %}
+    <!-- Basic JS for this template::: bootstrap-fs -->
+    {% block js %}
+    <!-- Vendor JS Files -->
+    <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'vendor/aos/dist/aos.js' %}"></script>
+    <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/purecounterjs/dist/purecounter.js' %}"></script>
+    <script src="{% static 'vendor/isotope-layout/dist/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'vendor/glightbox/dist/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
 
-  <!-- Basic JS for this template::: bootstrap-fs -->
-  {% block js %}
-  <!-- Vendor JS Files -->
-  <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.js' %}"></script>
-  <script src="{% static 'vendor/aos/dist/aos.js' %}"></script>
-  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
-  <script src="{% static 'vendor/purecounterjs/dist/purecounter.js' %}"></script>
-  <script src="{% static 'vendor/isotope-layout/dist/isotope.pkgd.min.js' %}"></script>
-  <script src="{% static 'vendor/glightbox/dist/js/glightbox.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
+    <!-- Template Main JS File -->
+    <script src="{% static 'themes/bootstrap-fs/js/main.js' %}"></script>
+    {% endblock js %}
 
-  <!-- Template Main JS File -->
-  <script src="{% static 'themes/bootstrap-fs/js/main.js' %}"></script>
-  {% endblock js %}
-
-  <!--  USE THE extrajs_bottom BLOCK to add extra javascripts here -->
-  {% block extrajs %}
-  {% endblock extrajs %}        
-
-</body>
-{% endblock body %}
-
+    <!--  USE THE extrajs_bottom BLOCK to add extra javascripts here -->
+    {% block extrajs %} {% endblock extrajs %}
+  </body>
+  {% endblock body %}
 </html>
 {% endraw %}

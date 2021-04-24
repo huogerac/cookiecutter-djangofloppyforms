@@ -14,7 +14,7 @@
 
         <header class="section-header">
           <h2>Features</h2>
-          <p>O que este template tem para te ajudar?</p>
+          <p>What is built in this template?</p>
         </header>
 
         <!-- Feature Icons -->
@@ -29,39 +29,39 @@
                   <i class="ri-user-line"></i>
                   <div>
                     <h4><a href="{% url {% endraw %}'{{ cookiecutter.main_app }}{% raw %}.login' %}">Login</a></h4>
-                    <p>Página de login com redirect para página de sucesso</p>
+                    <p>Login page with success page redirect</p>
                   </div>
                 </div>
 
                 <div class="col-md-12 icon-box" data-aos="fade-up">
                   <i class="ri-home-2-line"></i>
                   <div>
-                    <h4><a href="{% url {% endraw %}'{{ cookiecutter.main_app }}.basic_form'{% raw %} %}">form básico</a></h4>
-                    <p>Form com campos diversos sem relacionamento com campos de um Model</p>
+                    <h4><a href="{% url {% endraw %}'{{ cookiecutter.main_app }}.basic_form'{% raw %} %}">Basic Form</a></h4>
+                    <p>Form without Model based fields</p>
                   </div>
                 </div>
 
                 <div class="col-md-12 icon-box" data-aos="fade-up" data-aos-delay="100">
                   <i class="ri-home-8-line"></i>
                   <div>
-                    <h4><a href="{% url {% endraw %}'{{ cookiecutter.main_app }}.{{ cookiecutter.main_model|lower }}.list'{% raw %} %}">Lista de {% endraw %}{{ cookiecutter.main_model|lower }}s + CRUD</a></h4>{% raw %}
-                    <p>Listagem do model usando CBV do Django</p>
+                    <h4><a href="{% url {% endraw %}'{{ cookiecutter.main_app }}.{{ cookiecutter.main_model|lower }}.list'{% raw %} %}">List of {% endraw %}{{ cookiecutter.main_model|lower }}s + CRUD</a></h4>{% raw %}
+                    <p>List, Create, Read, Update and Delete using Class Base View</p>
                   </div>
                 </div>
 
                 <div class="col-md-12 icon-box" data-aos="fade-up" data-aos-delay="300">
                   <i class="ri-ancient-gate-line"></i>
                   <div>
-                    <h4><a href="{% url {% endraw %}'{{ cookiecutter.main_app }}.{{ cookiecutter.main_model|lower }}.create'{% raw %} %}">Criar {% endraw %}{{ cookiecutter.main_model|lower }}</a></h4>{% raw %}
-                    <p>Cria um novo registro usando CBV do Django</p>
+                    <h4><a href="{% url {% endraw %}'{{ cookiecutter.main_app }}.{{ cookiecutter.main_model|lower }}.create'{% raw %} %}">Make an API call: {% endraw %}{{ cookiecutter.main_model|lower }}</a></h4>{% raw %}
+                    <p>Create a new row using CBV</p>
                   </div>
                 </div>
 
                 <div class="col-md-12 icon-box" data-aos="fade-up" data-aos-delay="400">
                   <i class="ri-home-smile-2-line"></i>
                   <div>
-                    <h4>Oq mais podemos ter aqui?</h4>
-                    <p>Cadastre uma <a href="https://github.com/huogerac/cookiecutter-djangofloppyforms/issues">Issue</a> no repositório se tiver alguma sugestão sobre oq mais este template poderia oferecer</p>
+                    <h4>Missing something?</h4>
+                    <p>Add an <a href="https://github.com/huogerac/cookiecutter-djangofloppyforms/issues">Issue</a> in the repo or contribute to it.</p>
                   </div>
                 </div>
 

@@ -1,15 +1,13 @@
 {
-  "project_name": "Tarefas Para Hoje",
+  "project_name": "My Awesome Tasks",
   "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
   "main_app": "todo",
   "main_model": "Task",
-  "description": "Meu cadastro de tarefas bonitão!",
+  "description": "My tasks using an awesome template",
   "author_name": "Roger Camargo",
-  "domain_name": "na-inter.net",
+  "domain_name": "mytasks.na-inter.net",
   "email": "{{ cookiecutter.author_name.lower()|replace(' ', '-') }}@example.com",
   "version": "0.1.0",
   "timezone": "UTC",
-  "_copy_without_render": [
-    "**/floppyforms/*.html"
-  ]
+  "_copy_without_render": ["**/floppyforms/*.html"]
 }
