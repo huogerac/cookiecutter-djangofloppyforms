@@ -19,6 +19,7 @@ Contributions are welcome and if you like this repo, please, hit the star button
 - Make it easier to install and use modern Javascript/CSS libraries
 - Make it easier to use website templates (when you buy a pretty html website template)
 - Make Django a little bit less monolithic
+- Check [this blog post](https://huogerac.hashnode.dev/better-usage-of-jscss-inside-django-templates-with-django-floppyforms-ckoervqa101rmv9s1gzazhco7) out for more detailed explanation
 
 ## Requirements
 
