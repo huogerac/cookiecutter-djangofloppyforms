@@ -23,6 +23,7 @@ urlpatterns = [
     # GET STARTED
     path('getstarted', TemplateView.as_view(template_name="{{ cookiecutter.main_app }}/getstarted.html"), name='{{ cookiecutter.main_app }}.getstarted'),
     path('basic_form', views.BasicFormView.as_view(), name='{{ cookiecutter.main_app }}.basic_form'),
+    path('simple_form', views.SimpleFormView.as_view(), name='{{ cookiecutter.main_app }}.simple_form'),
 
     # CRUD
     path('{{ cookiecutter.main_model|lower }}/list', views.{{ cookiecutter.main_model }}ListView.as_view(), name="{{ cookiecutter.main_app }}.{{ cookiecutter.main_model|lower }}.list"),

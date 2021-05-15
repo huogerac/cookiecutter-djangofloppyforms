@@ -8,9 +8,10 @@ Well, this structure is something in the middle where it might help you in Djang
 
 ## Important
 
-Have problems or questions, drop a message using the [Issues](https://github.com/huogerac/cookiecutter-djangofloppyforms/issues).
-
-Contributions are welcome and if you like this repo, please, hit the star button!
+- Have problems or questions, drop a message using the [Issues](https://github.com/huogerac/cookiecutter-djangofloppyforms/issues).
+- Missing something? You can also open an [Issues](https://github.com/huogerac/cookiecutter-djangofloppyforms/issues).
+- Contributions are welcome
+- If you like this repository, please, hit the star button!
 
 ## Why
 
@@ -19,7 +20,9 @@ Contributions are welcome and if you like this repo, please, hit the star button
 - Make it easier to install and use modern Javascript/CSS libraries
 - Make it easier to use website templates (when you buy a pretty html website template)
 - Make Django a little bit less monolithic
+- I couldn't find out a complete project sample using django-floppyforms
 - Check [this blog post](https://huogerac.hashnode.dev/better-usage-of-jscss-inside-django-templates-with-django-floppyforms-ckoervqa101rmv9s1gzazhco7) out for more detailed explanation
+- Check [this video](https://www.youtube.com/watch?v=Hf3-sLJOW-U) out for more hands on using this project
 
 ## Requirements
 

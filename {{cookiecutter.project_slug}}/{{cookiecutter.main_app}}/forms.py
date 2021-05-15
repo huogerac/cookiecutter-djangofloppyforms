@@ -5,7 +5,7 @@ from django.contrib.auth.forms import AuthenticationForm
 
 import floppyforms.__future__ as forms
 from floppyforms import widgets
-
+from themes.widgets import SwitchInput
 
 from .models import {{ cookiecutter.main_model }}
 
@@ -18,6 +18,19 @@ class {{ cookiecutter.main_model }}ModelForm(forms.ModelForm):
             'description': widgets.TextInput(),
             'due_to': widgets.DateTimeInput(),
         }
+
+
+class SimpleForm(forms.Form):
+    name = forms.CharField(
+        max_length=64, widget=widgets.TextInput(attrs={"placeholder": "Jane Doe"})
+    )
+    email = forms.CharField(
+        max_length=128,
+        widget=widgets.TextInput(attrs={"placeholder": "email@example.com"}),
+    )
+    tos = forms.BooleanField(
+        label="", widget=SwitchInput(), help_text="Terms of Service"
+    )
 
 
 class BasicForm(forms.Form):

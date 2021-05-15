@@ -1,0 +1,6 @@
+<div class="form-check form-switch">
+    <input class="form-check-input" type="{{ type }}" id="{{ attrs.id }}" name="{{ name }}"{% if value %} value="{{ value }}"{% endif %} {% if required %} required{% endif %}>
+    {% block label %}
+    <label class="form-check-label" for="{{ attrs.id }}">{{ help_text }}</label>
+    {% endblock %}
+</div>

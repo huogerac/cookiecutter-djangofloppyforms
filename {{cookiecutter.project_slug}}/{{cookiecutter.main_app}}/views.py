@@ -6,7 +6,7 @@ from django.views.generic import TemplateView, ListView, View
 from django.http import HttpResponse
 
 from .models import {{ cookiecutter.main_model }}
-from .forms import {{ cookiecutter.main_model }}ModelForm, BasicForm
+from .forms import {{ cookiecutter.main_model }}ModelForm, BasicForm, SimpleForm
 from .services import {{ cookiecutter.main_model|lower }}_service
 
 
@@ -17,6 +17,11 @@ def index(request):
 class BasicFormView(FormView):
     template_name = '{{ cookiecutter.main_app }}/basic_form.html'
     form_class = BasicForm
+
+
+class SimpleFormView(FormView):
+    template_name = '{{ cookiecutter.main_app }}/simple_form.html'
+    form_class = SimpleForm
 
 
 class {{ cookiecutter.main_model }}ListView(ListView):

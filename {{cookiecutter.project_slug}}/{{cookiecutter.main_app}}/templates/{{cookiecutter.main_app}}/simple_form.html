@@ -1,0 +1,111 @@
+{% raw %}{% extends 'themes/bootstrap-fs/base.html' %}
+
+{% load static %}
+{% load floppyforms %}
+
+{% block content_hero %}
+{% endblock content_hero %}
+
+{% block content %}
+
+  <section class="dark-bg">
+
+    <div class="row">
+  
+      <div class="col-md-4">
+      </div>
+
+      <div class="col-md-4">
+
+        <div class="light-box spaced-box py-4">
+          <div class="text-center py-4">
+            <h1>Simple Form 1</h1>
+          </div>
+
+          <form class="row g-3" method="post" action="{% url {% endraw %}'{{ cookiecutter.main_app }}{% raw %}.login' %}">{% csrf_token %}
+            {{ form }}
+            <p>
+                <button type="submit" class="btn btn-primary btn-lg">
+                  Signup  <i class="fa fa-sign-in"></i> 
+                </button>
+            </p>
+            <input type="hidden" name="next" value="{{ next }}" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="row py-4">
+      <div class="col-md-2">
+      </div>
+
+      <div class="col-md-8">
+
+        <div class="light-box spaced-box">
+          <div class="text-center">
+            <h1 class="py-4">Simple Form 2</h1>
+          </div>
+
+          <form class="row g-3" method="post" action="{% url {% endraw %}'{{ cookiecutter.main_app }}{% raw %}.login' %}">{% csrf_token %}
+
+            <div class="row">
+              <div class="col">
+                {% formrow form.name %}
+              </div>
+              <div class="col">
+                {% formrow form.email %}
+              </div>
+
+              <input type="hidden" name="next" value="{{ next }}" />
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-primary">Signup</button>
+                </div>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row py-4">
+      <div class="col-md-2">
+      </div>
+
+      <div class="col-md-8">
+
+        <div class="light-box spaced-box">
+          <div class="text-center">
+            <h1 class="py-4">Simple Form 3</h1>
+          </div>
+
+          <form class="row g-3" method="post" action="{% url {% endraw %}'{{ cookiecutter.main_app }}{% raw %}.login' %}">{% csrf_token %}
+
+            {% form form using "floppyforms/layouts/bootstrap_floating.html" %}
+
+            <p>
+              <button type="submit" class="btn btn-primary">Signup</button>
+            </p>
+            <input type="hidden" name="next" value="{{ next }}" />
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+
+{% block footer_area %}
+{% endblock footer_area %}
+
+{% endraw %}

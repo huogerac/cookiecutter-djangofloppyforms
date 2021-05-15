@@ -1,5 +1,6 @@
 {% if "class" in attrs.keys %}
-{% for name, value in attrs.iteritems %} {{ name }}{% if name == "class" %}="form-control {{ value }}"{% if value != True %}="{{ value }}"{% endif %}{% endif %}{% endfor %}
+{% for name, value in attrs.iteritems %} {{ name }}{% if name == "class" %}="{{ value }}"{% if value != True %}="{{ value }}"{% endif %}{% endif %}{% endfor %}
 {% else %}
-{% for name, value in attrs.iteritems %} {{ name }}{% if value != True %}="{{ value }}"{% endif %}{% endfor %} class="form-control"
+{% for name, value in attrs.iteritems %} {{ name }}{% if value != True %}="{{ value }}" {% endif %}{% endfor %} 
 {% endif %}
+{% if "placeholder" in attrs.keys %} placeholder="{{ attrs.placeholder }}" {% endif %}

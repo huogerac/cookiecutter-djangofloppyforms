@@ -6,9 +6,6 @@
         
             {% block widget %}{% formfield field %}{% endblock %}
             {% block errors %}{% include "floppyforms/errors.html" with errors=field.errors %}{% endblock %}
-            {% block help_text %}{% if field.help_text %}
-                <span class="help-block">{{ field.help_text }}</span>
-            {% endif %}{% endblock %}
             {% block hidden_fields %}{% for field in hidden_fields %}{{ field.as_hidden }}{% endfor %}{% endblock %}
         
     {% endblock %}
